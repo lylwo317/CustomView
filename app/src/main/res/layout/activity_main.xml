@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlyt"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.kevin.mycircleprogress.MainActivity">
+
+
+
+    <com.kevin.mycircleprogress.view.DriveScoreCircleProgress
+        android:layout_width="103dp"
+        app:score="0"
+        android:layout_height="103dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/driver_score_circle_progress" />
+
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignBottom="@+id/btn_set_score"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="58dp" />
+
+    <Button
+        android:text="打分"
+        android:id="@+id/btn_set_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/editText"
+        android:layout_marginStart="54dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp" />
+
+
+</RelativeLayout>

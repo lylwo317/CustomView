@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:layout_height="155dp">
+
+    <com.kevin.mycircleprogress.view.DriveScoreCircleProgress
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:id="@+id/driver_score_circle_progress" />
+
+    <TextView
+        tools:text="最后一次行程"
+        android:textSize="12dp"
+        android:gravity="center"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView3" />
+
+    <LinearLayout
+        android:id="@+id/divider"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/driver_score_circle_progress"
+        android:layout_toEndOf="@+id/driver_score_circle_progress"
+        android:layout_marginStart="8dp">
+        <ImageView
+            android:layout_width="8dp"
+            android:src="@drawable/driver_score_circle2"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/vertical_divider"
+            android:layout_width="2dp"
+            android:layout_height="88dp"
+            android:layerType="software"
+            android:background="@drawable/dash_line_vertical"/>
+
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/driver_score_circle1"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:paddingLeft="4dp"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/divider">
+
+        <TextView
+            android:textSize="11dp"
+            tools:text="06/02 12:15 深圳市南山区粤海门村"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView2" />
+
+
+        <LinearLayout
+            android:gravity="bottom"
+            android:paddingBottom="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView"
+            android:layout_above="@+id/textView2">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/background_driver_score_circle"
+                    android:gravity="center"
+                    android:text="100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+                <TextView
+                    tools:text = "急加速"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/background_driver_score_circle"
+                    android:gravity="center"
+                    android:text="100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+                <TextView
+                    tools:text = "急加速"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:background="@drawable/background_driver_score_circle"
+                    android:gravity="center"
+                    android:text="100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+                <TextView
+                    tools:text = "急加速"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="11dp"
+            tools:text="06/02 12:15 深圳市南山区sgsgssgsgsgsg门村"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignStart="@+id/divider">
+        <TextView
+            android:drawableLeft="@drawable/icon_drive_mileage"
+            tools:text = "28Km"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:drawableLeft="@drawable/icon_drive_duration"
+            tools:text = "2小时10分"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:drawableLeft="@drawable/icon_drive_speed"
+            tools:text = "58Km/h"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

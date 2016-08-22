@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyCircleProgress</string>
+    <string name="old_driver_score">老司机得分</string>
+    <string check="0" name="my_journey_time_and_pos" trans="0">你{0} 我</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DriveScoreCircleProgress">
+        <attr name="description_text_size" format="dimension|reference"/>
+        <attr name="score_text_size" format="dimension|reference" />
+        <attr name="first_circle_color" format="color|reference" />
+        <attr name="second_circle_color" format="color|reference" />
+        <attr name="third_circle_color" format="color|reference" />
+        <attr name="score_text_color" format="color|reference" />
+        <attr name="description_text_color" format="color|reference"/>
+        <attr name="circle_stroke_width" format="dimension|reference" />
+        <attr name="score" format="float"/>
+        <attr name="description_text_margin_bottom" format="dimension|reference" />
+        <attr name="score_text_margin_bottom" format="dimension|reference" />
+        <attr name="description_text" format="string|reference" />
+    </declare-styleable>
+
+    <attr name="DriveScoreCircleProgressStyle" format="reference"/>
+</resources>
