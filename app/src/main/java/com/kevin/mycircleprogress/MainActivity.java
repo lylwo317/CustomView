@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.kevin.mycircleprogress.drawable.ListViewDrawable;
 import com.kevin.mycircleprogress.view.DriveScoreCircleProgress;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     private DriveScoreCircleProgress driverScoreCircleProgress;
     private Button btnSetScore;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         textView.setText(getString(R.string.my_journey_time_and_pos));
 
+        final Random ran =new Random(System.currentTimeMillis());
+
         rlyt = (RelativeLayout) findViewById(R.id.rlyt);
         rlyt.setBackground(new ListViewDrawable());
 
@@ -38,7 +42,27 @@ public class MainActivity extends AppCompatActivity {
         btnSetScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                driverScoreCircleProgress.setScore(Float.parseFloat(editText.getText().toString()));
+                //driverScoreCircleProgress.setScore(Float.parseFloat(editText.getText().toString()));
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        for (int i = 0; i <= 100; i++) {
+                            final int finalI = i;
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    driverScoreCircleProgress.setScore(ran.nextFloat()*50f);
+                                }
+                            });
+                            try {
+                                Thread.sleep(300);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }).start();
             }
         });
 

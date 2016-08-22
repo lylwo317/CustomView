@@ -1,5 +1,7 @@
 package com.kevin.mycircleprogress.view;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -70,6 +72,7 @@ public class DriveScoreCircleProgress extends View {
 
     private float totalDegrees;
     private float startOffsetDegrees;
+    private ObjectAnimator animator;
 
     public DriveScoreCircleProgress(Context context) {
         this(context, null);
@@ -81,6 +84,14 @@ public class DriveScoreCircleProgress extends View {
 
     public DriveScoreCircleProgress(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        animator = ObjectAnimator.ofFloat(this, "progress", this.score, this.score);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                DriveScoreCircleProgress.this.score  = (float) animation.getAnimatedValue();
+                postInvalidate();
+            }
+        });
         default_description_text_size = Utils.dp2px(getResources(), 9);
         default_score_text_size = Utils.dp2px(getResources(), 32f);
         default_description_text_margin_bottom = Utils.dp2px(getResources(), 25);
@@ -266,10 +277,27 @@ public class DriveScoreCircleProgress extends View {
             progressPaint.setShader(mRadialGradient);
     }
 
+
+    private void setProgress(float score){
+        int[] colors = {Color.argb(40, 166, 251, 209), Color.rgb(166, 251, 209), Color.argb(0, 166, 251, 209)};
+        float[] positions = {0f,score/100f*totalDegrees/360,1f};
+        SweepGradient mRadialGradient = new SweepGradient(cx, cy, colors, positions);
+        progressPaint.setShader(mRadialGradient);
+    }
+
     public void setScore(float score) {
-        this.score = score;
-        updateProgressPaint();
-        invalidate();
+        if (animator != null) {
+            animator.cancel();
+            animator.setFloatValues(this.score,score);
+            animator.setDuration(300);
+
+            animator.start();
+        }
+
+
+        //this.score = score;
+        //updateProgressPaint();
+        //invalidate();
     }
 
 }
