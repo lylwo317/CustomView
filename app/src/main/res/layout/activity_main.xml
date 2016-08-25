@@ -2,8 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rlyt"
     xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.kevin.mycircleprogress.MainActivity">
 
@@ -21,18 +23,17 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_alignBottom="@+id/btn_set_score"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="58dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:text="打分"
         android:id="@+id/btn_set_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/editText"
-        android:layout_marginStart="54dp" />
+        android:layout_marginStart="30dp"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_toEndOf="@+id/editText"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,8 +41,48 @@
         android:text="New Text"
         android:id="@+id/textView4"
         android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp" />
+        android:layout_centerHorizontal="true"/>
 
+
+
+    <com.kevin.mycircleprogress.view.DriveSpeedDialView
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:padding="4dp"
+        android:id="@+id/drive_speed_dial_view"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/driver_score_circle_progress"
+        android:layout_alignParentStart="true"/>
+
+    <com.kevin.mycircleprogress.view.SensorDialView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:id="@+id/drive_gravity_dial_view"
+        android:layout_alignTop="@+id/drive_speed_dial_view"
+        android:layout_toEndOf="@+id/drive_speed_dial_view"/>
+
+    <com.kevin.mycircleprogress.view.LandscapeSensorDialView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:id="@+id/drive_landscape_sensor_dial_view"
+        android:layout_below="@+id/drive_compass_dial_view"
+        android:layout_toEndOf="@+id/editText"/>
+
+    <com.kevin.mycircleprogress.view.CompassDialView
+        android:background="@drawable/compass_arrow"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:id="@+id/drive_compass_dial_view"
+        android:layout_below="@+id/drive_gravity_dial_view"
+        android:layout_toEndOf="@+id/drive_speed_dial_view"/>
+
+    <com.kevin.mycircleprogress.view.LandscapeDriveSpeedDialView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/drive_landscape_speed_dial_view"
+        android:layout_below="@+id/drive_speed_dial_view"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

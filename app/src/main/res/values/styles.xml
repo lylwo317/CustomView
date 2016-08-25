@@ -11,11 +11,11 @@
     
     <style name="DriveScoreCircleProgress">
         <item name="description_text_size" >11dp</item>
-        <item name="score_text_size" >26dp</item>
+        <item name="score_text_size" >39dp</item>
         <item name="first_circle_color">#91eccd</item>
         <item name="second_circle_color">#91eccd</item>
         <item name="third_circle_color">#91eccd</item>
-        <item name="score_text_color">#08d48f</item>
+        <item name="score_text_color">#f9f9f9</item>
         <item name="score">50.0</item>
         <item name="description_text_color">@android:color/black</item>
         <item name="description_text_margin_bottom">28dp</item>
